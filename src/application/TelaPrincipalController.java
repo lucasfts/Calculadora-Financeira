@@ -57,5 +57,44 @@ public class TelaPrincipalController {
 				e.printStackTrace();
 			}
 	    }
+	    
+	    @FXML
+	    void menuConsultaCustos_Click(ActionEvent event) {
+	    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TelaConsultaCusto.fxml"));
+			Parent root;
+			try {
+				root = (Parent)fxmlLoader.load();
+				centerPane.setCenter(root);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    }
+	    
+	    @FXML
+	    void menuRelCustos_Click(ActionEvent event) {
+	    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TelaRelCustos.fxml"));
+			Parent root;
+			try {
+				root = (Parent)fxmlLoader.load();
+				centerPane.setCenter(root);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    }
+	    
+	    @FXML
+	    void menuAjuda_Click(ActionEvent event) {
+	    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TelaAjuda.fxml"));
+			Parent root;
+			try {
+				root = (Parent)fxmlLoader.load();
+				centerPane.setCenter(root);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    }
 
 }

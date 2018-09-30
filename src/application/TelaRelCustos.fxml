@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="436.0" prefWidth="693.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaRelCustosController">
+   <children>
+      <Label layoutX="25.0" layoutY="21.0" text="Produto" />
+      <ComboBox layoutX="25.0" layoutY="41.0" prefWidth="150.0" />
+      <Label layoutX="26.0" layoutY="87.0" text="Custos de Produção:" />
+      <Label layoutX="141.0" layoutY="87.0" text="R$ 123" />
+      <Label layoutX="201.0" layoutY="87.0" text="Custos Gerais:" />
+      <Label layoutX="281.0" layoutY="87.0" text="R$ 123" />
+      <Label layoutX="448.0" layoutY="87.0" text="R$ 123" />
+      <Label layoutX="340.0" layoutY="87.0" text="Custos de Máquina:" />
+      <Label layoutX="156.0" layoutY="117.0" text="R$ 123" />
+      <Label layoutX="25.0" layoutY="117.0" text="Valor Mínimo de Venda:" />
+      <Label layoutX="216.0" layoutY="117.0" text="Valor Atualde Venda:" />
+      <Label layoutX="332.0" layoutY="117.0" text="R$ 123" />
+      <Label layoutX="500.0" layoutY="117.0" text="R$ 123" />
+      <Label layoutX="390.0" layoutY="117.0" text="Ponto de Equilibrio:" />
+      <LineChart layoutX="26.0" layoutY="170.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="170.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </children>
+</AnchorPane>

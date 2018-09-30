@@ -19,17 +19,17 @@
             <Menu mnemonicParsing="false" text="Custos">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#menuCadCusto_Click" text="Cadastros" />
-                  <MenuItem mnemonicParsing="false" text="Consultas" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuConsultaCustos_Click" text="Consultas" />
               </items>
             </Menu>
           <Menu mnemonicParsing="false" text="Relatório">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#menuRelCustos_Click" text="Relatório de Custos" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Opções">
               <items>
-                <MenuItem mnemonicParsing="false" text="Ajuda" />
+                <MenuItem mnemonicParsing="false" onAction="#menuAjuda_Click" text="Ajuda" />
               </items>
             </Menu>
         </menus>
