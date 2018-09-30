@@ -14,9 +14,14 @@
             <items>
               <MenuItem mnemonicParsing="false" onAction="#menuProduto_Action" text="Produtos" />
                   <MenuItem mnemonicParsing="false" onAction="#menuMaquinas_Click" text="Maquinas" />
-                  <MenuItem mnemonicParsing="false" text="Custos" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Custos">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#menuCadCusto_Click" text="Cadastros" />
+                  <MenuItem mnemonicParsing="false" text="Consultas" />
+              </items>
+            </Menu>
           <Menu mnemonicParsing="false" text="Relatório">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />

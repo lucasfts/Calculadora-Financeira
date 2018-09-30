@@ -44,5 +44,18 @@ public class TelaPrincipalController {
 				e.printStackTrace();
 			}
 	    }
+	    
+	    @FXML
+	    void menuCadCusto_Click(ActionEvent event) {
+	    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TelaCadCusto.fxml"));
+			Parent root;
+			try {
+				root = (Parent)fxmlLoader.load();
+				centerPane.setCenter(root);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    }
 
 }
