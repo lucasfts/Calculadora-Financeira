@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.media.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="352.0" prefWidth="552.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaPrincipalController">
    <children>
-      <Pane prefHeight="282.0" prefWidth="292.0">
-         <children>
-            <Button layoutX="73.0" layoutY="88.0" mnemonicParsing="false" text="Button" />
-         </children>
-      </Pane>
+      <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Parametros">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuProduto_Action" text="Produtos" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuMaquinas_Click" text="Maquinas" />
+                  <MenuItem mnemonicParsing="false" text="Custos" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Relatório">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Opções">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Ajuda" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <BorderPane fx:id="centerPane" layoutX="112.0" layoutY="55.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
    </children>
 </AnchorPane>
