@@ -30,5 +30,8 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </LineChart>
+      <Label layoutX="193.0" layoutY="21.0" text="Preço Kw/h" />
+      <TextField layoutX="191.0" layoutY="41.0" />
+      <Button layoutX="351.0" layoutY="41.0" mnemonicParsing="false" text="Calcular Custos" />
    </children>
 </AnchorPane>

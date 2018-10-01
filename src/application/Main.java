@@ -1,3 +1,10 @@
+/*
+ * Lucas Feitoza da Silva 	081160049
+ * Thiago Lopes Gomes	  	081160040
+ * Luis Fernando			081160029
+ */
+
+
 package application;
 	
 import javafx.application.Application;
