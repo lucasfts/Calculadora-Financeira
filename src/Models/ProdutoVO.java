@@ -4,8 +4,10 @@ import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-public class Produto {
-	
+public class ProdutoVO {
+	private final SimpleIntegerProperty codigo;
+	private final SimpleStringProperty descricao;
+	private final SimpleFloatProperty preco;
 	
 	public int getCodigo() {
 		return codigo.get();
@@ -34,14 +36,23 @@ public class Produto {
 		this.preco.set(preco);
 	}
 
-	private final SimpleIntegerProperty codigo;
-	private final SimpleStringProperty descricao;
-	private final SimpleFloatProperty preco;
 	
 	
-	public Produto(int codigo,String descricao,float preco) {
+	public ProdutoVO() {
+		codigo = new SimpleIntegerProperty(0);
+		descricao = new SimpleStringProperty("");
+		preco = new SimpleFloatProperty(0);
+	}
+	
+	public ProdutoVO(int codigo,String descricao,float preco) {
 		this.codigo = new SimpleIntegerProperty(codigo);
 		this.descricao = new SimpleStringProperty(descricao);
 		this.preco = new SimpleFloatProperty(preco);
 	}
+	
+	@Override
+	public String toString() {
+	    return this.getDescricao();
+	}
+	
 }

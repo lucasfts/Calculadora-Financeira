@@ -10,13 +10,13 @@
       <Label layoutX="23.0" layoutY="30.0" text="Código" />
       <Label layoutX="165.0" layoutY="30.0" text="Descrição" />
       <Label layoutX="449.0" layoutY="30.0" text="Preço Venda" />
-      <TextField layoutX="23.0" layoutY="47.0" prefHeight="25.0" prefWidth="119.0" />
-      <TextField layoutX="165.0" layoutY="47.0" prefHeight="25.0" prefWidth="259.0" />
-      <TextField layoutX="449.0" layoutY="47.0" />
+      <TextField id="txtCodigo" fx:id="txtCodigo" layoutX="23.0" layoutY="47.0" prefHeight="25.0" prefWidth="119.0" />
+      <TextField id="txtDescricao" fx:id="txtDescricao" layoutX="165.0" layoutY="47.0" prefHeight="25.0" prefWidth="259.0" />
+      <TextField id="txtPrecoVenda" fx:id="txtPrecoVenda" layoutX="449.0" layoutY="47.0" />
       <Label layoutX="23.0" layoutY="138.0" text="Descrição" />
       <TextField layoutX="23.0" layoutY="155.0" prefHeight="25.0" prefWidth="259.0" />
       <Button layoutX="286.0" layoutY="155.0" mnemonicParsing="false" text="Pesquisar" />
-      <Button layoutX="23.0" layoutY="83.0" mnemonicParsing="false" text="Adicionar" />
+      <Button id="btnSalvar" fx:id="btnSalvar" layoutX="23.0" layoutY="83.0" mnemonicParsing="false" onAction="#btnSalvar_Click" text="Adicionar" />
       <TableView fx:id="tblProdutos" blendMode="DARKEN" editable="true" layoutX="23.0" layoutY="192.0" prefHeight="200.0" prefWidth="606.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="200.0">
         <columns>
           <TableColumn fx:id="codigoCol" prefWidth="89.0" text="Código " />

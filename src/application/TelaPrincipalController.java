@@ -17,6 +17,19 @@ public class TelaPrincipalController {
 
 	 	 @FXML
 	     private BorderPane centerPane;
+	 	 
+	 	 @FXML
+	 	 protected void initialize() {
+	 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TelaDashboard.fxml"));
+			Parent root;
+			try {
+				root = (Parent)fxmlLoader.load();
+				centerPane.setCenter(root);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	 	 }
 
 	    @FXML
 	    void menuProduto_Action(ActionEvent event) {

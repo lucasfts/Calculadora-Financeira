@@ -5,18 +5,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="510.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="510.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaMaquinasController">
    <children>
       <Label layoutX="20.0" layoutY="30.0" text="Código" />
       <Label layoutX="382.0" layoutY="30.0" text="Descrição" />
       <Label layoutX="186.0" layoutY="30.0" text="Kw/h" />
-      <TextField layoutX="63.0" layoutY="26.0" prefHeight="25.0" prefWidth="104.0" />
-      <TextField layoutX="438.0" layoutY="26.0" prefHeight="25.0" prefWidth="225.0" />
-      <TextField layoutX="219.0" layoutY="26.0" />
+      <TextField fx:id="txtCodigo" layoutX="63.0" layoutY="26.0" prefHeight="25.0" prefWidth="104.0" />
+      <TextField fx:id="txtDescricao" layoutX="438.0" layoutY="26.0" prefHeight="25.0" prefWidth="225.0" />
+      <TextField fx:id="txtKwh" layoutX="219.0" layoutY="26.0" />
       <Label layoutX="20.0" layoutY="98.0" text="Descrição" />
       <TextField layoutX="20.0" layoutY="115.0" prefHeight="25.0" prefWidth="259.0" />
       <Button layoutX="283.0" layoutY="115.0" mnemonicParsing="false" text="Pesquisar" />
-      <Button layoutX="675.0" layoutY="26.0" mnemonicParsing="false" text="Adicionar" />
+      <Button fx:id="btnAdicionar" layoutX="675.0" layoutY="26.0" mnemonicParsing="false" onAction="#btnAdicionar_Click" text="Adicionar" />
       <TableView fx:id="tblProdutos" blendMode="DARKEN" editable="true" layoutX="23.0" layoutY="192.0" prefHeight="200.0" prefWidth="606.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="155.0">
         <columns>
           <TableColumn fx:id="codigoCol" prefWidth="89.0" text="Código " />
