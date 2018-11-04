@@ -2,6 +2,8 @@ package application;
 
 import java.util.ArrayList;
 
+import Models.MaquinaDAO;
+import Models.MaquinaVO;
 import Models.ProdutoDAO;
 import Models.ProdutoVO;
 import javafx.collections.FXCollections;
@@ -25,7 +27,7 @@ public class TelaCadCustoController {
     private Button btnCustoGeralAdicionar;
 
     @FXML
-    private ComboBox<?> cbCustoProdProduto;
+    private ComboBox<ProdutoVO> cbCustoProdProduto;
 
     @FXML
     private RadioButton rbCustoFixo;
@@ -46,7 +48,7 @@ public class TelaCadCustoController {
     private TextField txtCustoMaqTempoUnit;
 
     @FXML
-    private ComboBox<ProdutoVO> cbCustoMaqMaquina;
+    private ComboBox<MaquinaVO> cbCustoMaqMaquina;
 
     @FXML
     private Button btnCustoProdAdicionar;
@@ -70,16 +72,36 @@ public class TelaCadCustoController {
     private ComboBox<ProdutoVO> cbCustoMaqProduto;
     
     private void populateCbProdutos() {
-    	ProdutoDAO dao = new ProdutoDAO();
-    	ArrayList<ProdutoVO> lista = dao.getListaProdutos();
-    	ObservableList<ProdutoVO> prodItems = FXCollections.observableArrayList(lista);
+    	ProdutoDAO prodDAO = new ProdutoDAO();
+    	ArrayList<ProdutoVO> listaProds = prodDAO.getListaProdutos();
+    	ObservableList<ProdutoVO> prodItems = FXCollections.observableArrayList(listaProds);
     	cbCustoMaqProduto.setItems(prodItems);
+    	cbCustoProdProduto.setItems(prodItems);
+    	
+    	MaquinaDAO maqDAO = new MaquinaDAO();
+    	ArrayList<MaquinaVO> listaMaqs = maqDAO.getListaMaquinas();
+    	ObservableList<MaquinaVO> maqItems = FXCollections.observableArrayList(listaMaqs);
+    	cbCustoMaqMaquina.setItems(maqItems);
     	
     	
     	cbCustoMaqProduto.setOnKeyReleased(event -> {
             if (event.getCode().equals(KeyCode.ENTER)) {
                 ProdutoVO produto = cbCustoMaqProduto.getSelectionModel().getSelectedItem();
                 System.out.println(produto.getCodigo());
+            }
+        });
+    	
+    	cbCustoProdProduto.setOnKeyReleased(event -> {
+            if (event.getCode().equals(KeyCode.ENTER)) {
+                ProdutoVO produto = cbCustoMaqProduto.getSelectionModel().getSelectedItem();
+                System.out.println(produto.getCodigo());
+            }
+        });
+    	
+    	cbCustoMaqMaquina.setOnKeyReleased(event -> {
+            if (event.getCode().equals(KeyCode.ENTER)) {
+            	MaquinaVO maquina = cbCustoMaqMaquina.getSelectionModel().getSelectedItem();
+                System.out.println(maquina.getCodigo());
             }
         });
     	
@@ -109,6 +131,16 @@ public class TelaCadCustoController {
     @FXML
     void cbCustoMaqProduto_Action(ActionEvent event) {
     	System.out.println(cbCustoMaqProduto.getSelectionModel().getSelectedItem().getCodigo());
+    }
+    
+    @FXML
+    void cbCustoMaqMaquina_Action(ActionEvent event) {
+    	System.out.println(cbCustoMaqMaquina.getSelectionModel().getSelectedItem().getCodigo());
+    }
+    
+    @FXML
+    void cbCustoProdProduto_Action(ActionEvent event) {
+    	System.out.println(cbCustoProdProduto.getSelectionModel().getSelectedItem().getCodigo());
     }
 
 

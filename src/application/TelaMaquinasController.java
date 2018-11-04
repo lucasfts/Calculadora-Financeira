@@ -5,6 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import Models.ConexaoDb;
+import Models.MaquinaDAO;
+import Models.MaquinaVO;
+import Models.ProdutoDAO;
+import Models.ProdutoVO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -48,30 +52,26 @@ public class TelaMaquinasController {
 
     @FXML
     void btnAdicionar_Click(ActionEvent event) {
-    	Connection conexao =  ConexaoDb.getConexao();
-		  if(conexao != null) {
-			  String sql = "insert into Maquinas (Descricao, KWH) values (?,?)";
-			  try {
-				PreparedStatement pst = conexao.prepareStatement(sql);
-				pst.setString(1, txtDescricao.getText());
-				pst.setString(2, txtKwh.getText());
-				int adicionado = pst.executeUpdate();
-				if(adicionado > 0) {
-					alertInfo.setContentText("Máquina adicionada com sucesso!");
-					alertInfo.showAndWait();
-				}
-				else {
-					alertInfo.setContentText("Erro ao adicionar máquina!");
-					alertInfo.showAndWait();
-				}
-				
-			  } catch (SQLException e) {
-				// TODO Auto-generated catch block
-				  alertInfo.setContentText(e.getMessage());
-				  alertInfo.showAndWait();
-				  e.printStackTrace();
-			  }	  
-		  }
+    	try {
+			  MaquinaVO maquina = new MaquinaVO();
+			  maquina.setDescricao(txtDescricao.getText());
+			  maquina.setKwh(Float.parseFloat(txtKwh.getText()));
+			  MaquinaDAO dao = new MaquinaDAO();			
+			if(dao.insertMaquina(maquina)) {
+				alertInfo.setContentText("Máquina adicionada com sucesso!");
+				alertInfo.showAndWait();
+			}
+			else {
+				alertInfo.setContentText("Erro ao adicionar máquina!");
+				alertInfo.showAndWait();
+			}
+			
+		  } catch (Exception e) {
+			// TODO Auto-generated catch block
+			  alertInfo.setContentText(e.getMessage());
+			  alertInfo.showAndWait();
+			  e.printStackTrace();
+		  }	  
     }
 
 }
