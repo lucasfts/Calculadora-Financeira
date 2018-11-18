@@ -14,17 +14,17 @@
       <TextField id="txtDescricao" fx:id="txtDescricao" layoutX="165.0" layoutY="47.0" prefHeight="25.0" prefWidth="259.0" />
       <TextField id="txtPrecoVenda" fx:id="txtPrecoVenda" layoutX="449.0" layoutY="47.0" />
       <Label layoutX="23.0" layoutY="138.0" text="Descrição" />
-      <TextField layoutX="23.0" layoutY="155.0" prefHeight="25.0" prefWidth="259.0" />
-      <Button layoutX="286.0" layoutY="155.0" mnemonicParsing="false" text="Pesquisar" />
-      <Button id="btnSalvar" fx:id="btnSalvar" layoutX="23.0" layoutY="83.0" mnemonicParsing="false" onAction="#btnSalvar_Click" text="Adicionar" />
-      <TableView fx:id="tblProdutos" blendMode="DARKEN" editable="true" layoutX="23.0" layoutY="192.0" prefHeight="200.0" prefWidth="606.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="200.0">
+      <TextField fx:id="txtPesquisa" layoutX="23.0" layoutY="155.0" prefHeight="25.0" prefWidth="259.0" />
+      <Button fx:id="btnPesquisar" layoutX="286.0" layoutY="155.0" mnemonicParsing="false" onAction="#btnPesquisar_Click" text="Pesquisar" />
+      <Button id="btnSalvar" fx:id="btnSalvar" layoutX="23.0" layoutY="83.0" mnemonicParsing="false" onAction="#btnSalvar_Click" prefHeight="25.0" prefWidth="67.0" text="Adicionar" />
+      <TableView fx:id="tblProdutos" blendMode="DARKEN" editable="true" layoutX="23.0" layoutY="192.0" prefHeight="200.0" prefWidth="606.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="200.0">
         <columns>
           <TableColumn fx:id="codigoCol" prefWidth="89.0" text="Código " />
           <TableColumn fx:id="descricaoCol" prefWidth="354.0" text="Descriçao" />
             <TableColumn fx:id="precoCol" minWidth="0.0" prefWidth="121.0" text="Preço Venda" />
         </columns>
       </TableView>
-      <Button layoutX="607.0" layoutY="155.0" mnemonicParsing="false" text="Excluir" AnchorPane.rightAnchor="20.0" />
-      <Button layoutX="551.0" layoutY="155.0" mnemonicParsing="false" text="Editar" AnchorPane.rightAnchor="75.0" />
+      <Button fx:id="btnExcluir" layoutX="20.0" layoutY="388.0" mnemonicParsing="false" onAction="#btnExcluir_Click" prefHeight="25.0" prefWidth="73.0" text="Excluir" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+      <Button fx:id="btnCancelar" layoutX="98.0" layoutY="83.0" mnemonicParsing="false" onAction="#btnCancelar_Click" prefHeight="25.0" prefWidth="67.0" text="Cancelar" />
    </children>
 </AnchorPane>
