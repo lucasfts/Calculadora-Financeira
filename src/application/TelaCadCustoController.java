@@ -73,13 +73,13 @@ public class TelaCadCustoController {
     
     private void populateCbProdutos() {
     	ProdutoDAO prodDAO = new ProdutoDAO();
-    	ArrayList<ProdutoVO> listaProds = prodDAO.getListaProdutos();
+    	ArrayList<ProdutoVO> listaProds = prodDAO.getAllProdutos();
     	ObservableList<ProdutoVO> prodItems = FXCollections.observableArrayList(listaProds);
     	cbCustoMaqProduto.setItems(prodItems);
     	cbCustoProdProduto.setItems(prodItems);
     	
     	MaquinaDAO maqDAO = new MaquinaDAO();
-    	ArrayList<MaquinaVO> listaMaqs = maqDAO.getListaMaquinas();
+    	ArrayList<MaquinaVO> listaMaqs = maqDAO.getAllMaquinas();
     	ObservableList<MaquinaVO> maqItems = FXCollections.observableArrayList(listaMaqs);
     	cbCustoMaqMaquina.setItems(maqItems);
     	

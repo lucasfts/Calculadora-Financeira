@@ -26,7 +26,7 @@ import javafx.scene.layout.AnchorPane;
 public class TelaProdutosController {
 
 	@FXML
-	private Button btnSalvar;
+	private Button btnCadastro;
 
 	@FXML
 	private Button btnCancelar;
@@ -73,12 +73,12 @@ public class TelaProdutosController {
 		data.clear();
 		ProdutoDAO dao = new ProdutoDAO();
 		if(filtro.isEmpty()) {
-			for (ProdutoVO produto : dao.getListaProdutos()) {
+			for (ProdutoVO produto : dao.getAllProdutos()) {
 				data.add(produto);
 			}
 		}
 		else {
-			for (ProdutoVO produto : dao.getListaProdutosComFiltro(filtro)) {
+			for (ProdutoVO produto : dao.getListProdutos(filtro)) {
 				data.add(produto);
 			}
 		}
@@ -87,7 +87,7 @@ public class TelaProdutosController {
 	
 
 	private void LimparCampos() {
-		btnSalvar.setText("Adicionar");
+		btnCadastro.setText("Adicionar");
 		txtCodigo.setText(null);
 		txtDescricao.setText(null);
 		txtPrecoVenda.setText(null);
@@ -147,6 +147,7 @@ public class TelaProdutosController {
 
 		txtCodigo.setDisable(true);
 		btnCancelar.setVisible(false);
+		btnExcluir.setVisible(false);
 
 		PropertyValueFactory<ProdutoVO, Integer> codigoProp = new PropertyValueFactory<ProdutoVO, Integer>("codigo");
 		codigoCol.setCellValueFactory(codigoProp);
@@ -162,13 +163,15 @@ public class TelaProdutosController {
 
 		tblProdutos.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
 			if (newSelection != null) {
-				btnSalvar.setText("Salvar");
+				btnCadastro.setText("Salvar");
 				txtCodigo.setText(String.valueOf(newSelection.getCodigo()));
 				txtDescricao.setText(newSelection.getDescricao());
 				txtPrecoVenda.setText(String.valueOf(newSelection.getPreco()));
-				btnCancelar.setVisible(true);
+				btnExcluir.setVisible(true);
+				btnCancelar.setVisible(true);		
 			} else {
 				LimparCampos();
+				btnExcluir.setVisible(false);
 				btnCancelar.setVisible(false);
 			}
 		});
@@ -176,7 +179,7 @@ public class TelaProdutosController {
 	}
 
 	@FXML
-	void btnSalvar_Click(ActionEvent event) {
+	void btnCadastro_Click(ActionEvent event) {
 		if (txtCodigo.getText() != null && !txtCodigo.getText().isEmpty()) {
 			editarProduto();
 		} else {

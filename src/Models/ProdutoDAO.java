@@ -61,11 +61,11 @@ public class ProdutoDAO {
 		
 	}
 	
-	public ArrayList<ProdutoVO> getListaProdutos() {	
-		return getListaProdutosComFiltro("");		
+	public ArrayList<ProdutoVO> getAllProdutos() {	
+		return getListProdutos("");		
 	}
 	
-	public ArrayList<ProdutoVO> getListaProdutosComFiltro(String descricao) {
+	public ArrayList<ProdutoVO> getListProdutos(String descricao) {
 		ArrayList<ProdutoVO> lista = new ArrayList<ProdutoVO>();
 		Connection conexao =  ConexaoDb.getConexao();
 		String sql = "select * from Produtos where Descricao like ?";	
