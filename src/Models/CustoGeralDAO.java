@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class CustoGeralDAO {
 	public boolean insertCusto(CustoGeralVO custo) {
 		Connection conexao =  ConexaoDb.getConexao();
-		String sql = "insert into CustGeral (Descricao, ValorCusto) values (?,?)";
+		String sql = "insert into CustoGeral (Descricao, ValorCusto) values (?,?)";
 		PreparedStatement pst;
 		try {
 			pst = conexao.prepareStatement(sql);

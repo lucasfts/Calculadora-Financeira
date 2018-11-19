@@ -28,7 +28,7 @@ public class CustoProducaoDAO {
 		
 	}
 	
-	public ArrayList<CustoProducaoVO> getListaCustos() {
+	public ArrayList<CustoProducaoVO> getAllCustos() {
 		ArrayList<CustoProducaoVO> lista = new ArrayList<CustoProducaoVO>();
 		Connection conexao =  ConexaoDb.getConexao();
 		String sql = "select * from CustoProducao";	

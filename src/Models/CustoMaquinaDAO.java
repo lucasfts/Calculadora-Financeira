@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class CustoMaquinaDAO {
 	public boolean insertCusto(CustoMaquinaVO custo) {
 		Connection conexao =  ConexaoDb.getConexao();
-		String sql = "insert into CustoProducao (IdProduto,IdMaquina,TempoUnitario) "
+		String sql = "insert into CustoMaquina (IdProduto,IdMaquina,TempoUnitario) "
 				+ "values (?,?,?)";
 		PreparedStatement pst;
 		try {
@@ -27,7 +27,7 @@ public class CustoMaquinaDAO {
 		
 	}
 	
-	public ArrayList<CustoMaquinaVO> getListaCustos() {
+	public ArrayList<CustoMaquinaVO> getAllCustos() {
 		ArrayList<CustoMaquinaVO> lista = new ArrayList<CustoMaquinaVO>();
 		Connection conexao =  ConexaoDb.getConexao();
 		String sql = "select * from CustoMaquina";	
