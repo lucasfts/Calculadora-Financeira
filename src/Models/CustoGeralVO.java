@@ -28,11 +28,11 @@ public class CustoGeralVO {
 
 
 
-	public float getvalorCusto() {
+	public float getValorCusto() {
 		return valorCusto.get();
 	}
 	
-	public void setvalorCusto(float valorCusto) {
+	public void setValorCusto(float valorCusto) {
 		this.valorCusto.set(valorCusto);
 	}
 

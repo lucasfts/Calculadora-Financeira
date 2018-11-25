@@ -14,7 +14,7 @@ public class CustoGeralDAO {
 		try {
 			pst = conexao.prepareStatement(sql);
 			pst.setString(1, custo.getDescricao() );
-			pst.setFloat(2, custo.getvalorCusto());
+			pst.setFloat(2, custo.getValorCusto());
 			int adicionado = pst.executeUpdate();
 			return adicionado > 0;
 		} catch (SQLException e) {
@@ -25,12 +25,18 @@ public class CustoGeralDAO {
 		
 	}
 	
-	public ArrayList<CustoGeralVO> getListaCustos() {
+	public ArrayList<CustoGeralVO> getAllCustos() {
+		return getListCustos("");
+		
+	}
+	
+	public ArrayList<CustoGeralVO> getListCustos(String filtro) {
 		ArrayList<CustoGeralVO> lista = new ArrayList<CustoGeralVO>();
 		Connection conexao =  ConexaoDb.getConexao();
-		String sql = "select * from Maquinas";	
+		String sql = "select * from CustoGeral where Descricao like ?";	
 		try {
 			PreparedStatement pst = conexao.prepareStatement(sql);
+			pst.setString(1, "%"+filtro+"%");
 			ResultSet rs = pst.executeQuery();
 			while(rs.next()) {
 				CustoGeralVO custo = new CustoGeralVO(rs.getInt("Id"),rs.getString("Descricao"),rs.getFloat("ValorCusto"));

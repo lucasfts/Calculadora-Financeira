@@ -114,7 +114,7 @@ public class TelaCadCustoController {
     void btnCustoGeralAdicionar_Click(ActionEvent event) {
     	CustoGeralVO custo = new CustoGeralVO();
     	custo.setDescricao(txtCustoGeralDescricao.getText());
-    	custo.setvalorCusto(Float.valueOf(txtCustoGeralCusto.getText()));
+    	custo.setValorCusto(Float.valueOf(txtCustoGeralCusto.getText()));
     	CustoGeralDAO dao = new CustoGeralDAO();
     	if (dao.insertCusto(custo)) {
 			alertInfo.setContentText("Custo geral adicionado com sucesso!");

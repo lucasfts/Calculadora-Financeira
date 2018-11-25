@@ -85,4 +85,24 @@ public class ProdutoDAO {
 		return lista;
 		
 	}
+	
+	public ProdutoVO getProduto(int id) {
+		ProdutoVO produto = null;
+		Connection conexao =  ConexaoDb.getConexao();
+		String sql = "select * from Produtos where Id = ?";	
+		try {
+			PreparedStatement pst = conexao.prepareStatement(sql);
+			pst.setInt(1, id);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next()) {
+				produto = new ProdutoVO(rs.getInt("Id"),rs.getString("Descricao"),rs.getFloat("PrecoVenda"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return produto;
+		
+	}
 }

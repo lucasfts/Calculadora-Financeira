@@ -73,7 +73,7 @@ public class TelaPrincipalController {
 	    
 	    @FXML
 	    void menuConsultaCustos_Click(ActionEvent event) {
-	    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TelaConsultaCusto.fxml"));
+	    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TelaConsultaCustos.fxml"));
 			Parent root;
 			try {
 				root = (Parent)fxmlLoader.load();

@@ -7,7 +7,7 @@ import com.microsoft.sqlserver.jdbc.*;
 public class ConexaoDb {
 	public static Connection getConexao() {
         Connection conexao = null;
-        String connectionUrl = "jdbc:sqlserver://localhost:1433;databaseName=Calculadora;integratedSecurity=true;";
+        String connectionUrl = "jdbc:sqlserver://localhost:1433;databaseName=Calculadora;user=sa;password=123456";
         
         try 
         {

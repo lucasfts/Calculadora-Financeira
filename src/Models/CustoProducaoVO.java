@@ -2,6 +2,7 @@ package Models;
 
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class CustoProducaoVO {
@@ -10,6 +11,9 @@ public class CustoProducaoVO {
 	private final SimpleIntegerProperty tipoCusto;
 	private final SimpleStringProperty descricao;
 	private final SimpleFloatProperty valorCusto;
+	private final SimpleObjectProperty<ProdutoVO> produto;
+	
+	private final SimpleStringProperty tipoCustoName;
 	
 	public int getCodigo() {
 		return codigo.get();
@@ -52,12 +56,27 @@ public class CustoProducaoVO {
 	}
 	
 	
+	public SimpleObjectProperty<ProdutoVO> getProduto() {
+		return produto;
+	}
+	
+	public void setProduto(ProdutoVO produto) {
+		this.produto.set(produto);
+	}
+	
+	public SimpleStringProperty getTipoCustoName() {
+		return this.tipoCustoName;
+	}
+	
+
 	public CustoProducaoVO() {
+		produto = null;
 		codigo = new SimpleIntegerProperty(0);
 		codigoProduto = new SimpleIntegerProperty(0);
 		tipoCusto = new SimpleIntegerProperty(0);
 		descricao = new SimpleStringProperty("");
 		valorCusto = new SimpleFloatProperty(0);
+		tipoCustoName = new SimpleStringProperty("");
 	}
 	
 	public CustoProducaoVO(int codigo,int codigoProduto, int tipoCusto,String descricao, float valorCusto) {
@@ -66,10 +85,17 @@ public class CustoProducaoVO {
 		this.tipoCusto = new SimpleIntegerProperty(tipoCusto);
 		this.descricao = new SimpleStringProperty(descricao);
 		this.valorCusto = new SimpleFloatProperty(valorCusto);
+		
+		ProdutoDAO dao = new ProdutoDAO();
+		this.produto = new SimpleObjectProperty<ProdutoVO>(dao.getProduto(codigoProduto));
+		
+		this.tipoCustoName = new SimpleStringProperty(tipoCusto == 0 ? "Custo Fixo" : "Custo variável");
 	}
 	
 	@Override
 	public String toString() {
 	    return this.getDescricao();
 	}
+
+	
 }
