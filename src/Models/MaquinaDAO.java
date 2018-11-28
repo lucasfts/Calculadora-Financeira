@@ -86,4 +86,24 @@ public class MaquinaDAO {
 		return lista;
 		
 	}
+	
+	public MaquinaVO getMaquina(int id) {
+		MaquinaVO maquina = null;
+		Connection conexao =  ConexaoDb.getConexao();
+		String sql = "select * from Maquinas where Id = ?";	
+		try {
+			PreparedStatement pst = conexao.prepareStatement(sql);
+			pst.setInt(1, id);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next()) {
+				maquina = new MaquinaVO(rs.getInt("Id"),rs.getString("Descricao"),rs.getFloat("Kwh"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return maquina;
+		
+	}
 }

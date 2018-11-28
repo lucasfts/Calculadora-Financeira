@@ -56,16 +56,16 @@ public class CustoProducaoVO {
 	}
 	
 	
-	public SimpleObjectProperty<ProdutoVO> getProduto() {
-		return produto;
+	public ProdutoVO getProduto() {
+		return produto.get();
 	}
 	
 	public void setProduto(ProdutoVO produto) {
 		this.produto.set(produto);
 	}
 	
-	public SimpleStringProperty getTipoCustoName() {
-		return this.tipoCustoName;
+	public String getTipoCustoName() {
+		return tipoCustoName.get();
 	}
 	
 
